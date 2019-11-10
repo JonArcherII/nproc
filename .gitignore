@@ -1,0 +1,8 @@
+.vscode
+
+*.o
+*.out
+
+*.a
+
+nproc
