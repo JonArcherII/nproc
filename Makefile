@@ -14,9 +14,12 @@ CFLAGS := -Wall -Wextra -std=c18 -Og
 CFLAGS += $(foreach dir, $(INC_DIRS), -I$(dir))
 CFLAGS += -DVERSION=\"$(VERSION)\"
 
-.PHONY: all clean
+.PHONY: all install clean
 
 all: $(TARGET)
+
+install: all
+	install -m 557 $(TARGET) /usr/local/bin
 
 clean:
 	-rm -rf $(TARGET) $(OBJS)
